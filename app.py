@@ -7,7 +7,8 @@ import streamlit as st
 import plotly.graph_objects as go
 
 # Load Model
-model = load_model(r'E:\MCA\Bitcoin_Price_Prediction\Bitcoin_Price_Prediction.keras')
+# model = load_model(r'E:\MCA\Bitcoin_Price_Prediction\Bitcoin_Price_Prediction.keras')  #for local machine
+model = load_model('Bitcoin_Price_Prediction.keras')   #for deployement
 
 st.header('Bitcoin Price Prediction Model')         
 st.subheader('Historical Price Data (USD)')
