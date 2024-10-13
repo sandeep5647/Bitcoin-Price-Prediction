@@ -11,7 +11,6 @@ from datetime import datetime, timedelta
 # model = load_model(r'E:\MCA\Bitcoin_Price_Prediction\Bitcoin_Price_Prediction.keras')  #for local machine
 model = load_model('Bitcoin_Price_Prediction.keras')   # For deployment
 
-# Header and disclaimer
 st.header('Bitcoin Price Prediction Model')
 
 st.markdown(f"""
@@ -22,14 +21,14 @@ st.markdown(f"""
 
 st.subheader('Historical Price Data (USD)')
 end_date = datetime.now().strftime('%Y-%m-%d')
-start_date = '2015-01-01'
+start_date = (datetime.now() - timedelta(days=365)).strftime('%Y-%m-%d')
 
 # Fetching Bitcoin data
 data = pd.DataFrame(yf.download('BTC-USD', start=start_date, end=end_date))
 data = data.drop(columns=['Adj Close'])
 data = data.reset_index()
 
-st.write(data.iloc[::-1])  # Display data in reverse order
+st.write(data.iloc[::-1])  # Display in reverse order
 
 # Bitcoin Line Chart
 fig = go.Figure()
