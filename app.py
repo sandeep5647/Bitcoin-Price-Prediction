@@ -19,7 +19,7 @@ st.markdown(f"""
 - This application is for learning and educational purposes only. Please **do not make any investment decisions** based on these predictions.
 """)
 
-st.subheader('Historical Price Data (USD)')
+st.subheader('Bitcoin Price Trends from the Last Year Until Now (USD)')
 end_date = datetime.now().strftime('%Y-%m-%d')
 start_date = (datetime.now() - timedelta(days=365)).strftime('%Y-%m-%d')
 
